@@ -1,15 +1,36 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native'
+import React, { useState } from 'react';
+import {View, Text, StyleSheet, FlatList, Button} from 'react-native'
+import { globalStyles } from '../style/globalStyle'
+import Item from '../components/item'
 
-export default function home(){
+
+
+export default function Home({userData}){
+
+    const [monitoringPoint, setMonitoringPoint] = useState([
+        {name: "tosse", key: "1"},
+        {name: "febbre", key: "3"},
+        {name: "stanchezza", key: "4"},
+        {name: "difficoltà respiratorie", key: "5"},
+        {name: "riduzione gusto olfatto", key: "6"}
+      ]);
+    
+      const pressHandler = (key) => {
+        setMonitoringPoint(prevMonitoringPoint => {
+          return prevMonitoringPoint.filter(monitoringPoint => monitoringPoint.key != key);
+        });
+      };
+      
+      console.log(userData); 
+
     return(
         <View>
             <View style={styles.dataCointainer}>
-                <Text style = {styles.title}>User data</Text>
-                <Text style = {styles.colorBright}>{userData.name}, {userData.affiliation}, ({userData.prov})</Text>
+                <Text style = {globalStyles.title}>User data</Text>
+                <Text style = {globalStyles.colorBright}>{userData.name}, {userData.affiliation}, ({userData.prov})</Text>
             </View>
             <View style = {styles.formContainer}>
-                <Text style = {styles.blackTitle}>Presenti uno di questi sintomi?</Text>
+                <Text style = {globalStyles.blackTitle}>Presenti uno di questi sintomi?</Text>
                 <FlatList
                 numColumns = '3'
                     data = {monitoringPoint}
@@ -32,19 +53,6 @@ const styles = StyleSheet.create({
     },
     formContainer: {
       padding: 20,
-    },
-    title: {
-      fontSize: 15, 
-      fontWeight: "bold", 
-      color: "#fff"
-    }, 
-    blackTitle: {
-      fontSize: 15, 
-      fontWeight: "bold", 
-      color: "#000"
-    }, 
-    colorBright: {
-      color: "#fff"
     },
     button: {
       marginTop: 20, 
