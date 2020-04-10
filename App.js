@@ -8,8 +8,8 @@ import Home from './screens/home'
 import { userData } from './data/data'
 
 const getFont = () => Font.loadAsync({
-    'gotu-regular': require('./assets/fonts/Gotu-Regular.ttf'),
-  });
+    'gotu-regular': require('./assets/fonts/Gotu-Regular.ttf')
+    });
 
 export default function App() {
 
