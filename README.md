@@ -1,4 +1,4 @@
-# INAF Codid Tracker Prototype
+# INAF Covid-19 Tracker Prototype
 
 To install the necessary environment 
 
@@ -23,3 +23,12 @@ npm install react-navigation-stack
 ```
 
 into project directory. 
+
+
+In case of error, could be necessary to install the following dependancies: 
+
+``` bash
+npm install react-native-safe-area-context  
+npm install @react-native-community/masked-view    
+npm install react-native-screens 
+```

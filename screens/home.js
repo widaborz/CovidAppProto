@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import {View, Text, StyleSheet, FlatList, Button} from 'react-native'
 import { globalStyles } from '../style/globalStyle'
 import Item from '../components/item'
+import { userData } from '../data/data'
 
-export default function Home({userData}){
+export default function Home(/*{userData}*/){
 
     const [monitoringPoint, setMonitoringPoint] = useState([
         {name: "tosse", key: "1"},

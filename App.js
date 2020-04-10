@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
 import * as  Font from 'expo-font';
 import { AppLoading } from 'expo';
-
-import Header from './components/header'
-import Home from './screens/home'
-import { userData } from './data/data'
+import Navigator from './routes/homeStack'
 
 const getFont = () => Font.loadAsync({
     'gotu-regular': require('./assets/fonts/Gotu-Regular.ttf')
@@ -17,11 +13,9 @@ export default function App() {
 
       if(fontsLoaded == 'on')
       {
+        console.log('start navigator'); 
         return(
-          <View>
-            <Header />
-            <Home userData = {userData}/>
-          </View>
+          <Navigator />
         )
       }
       else 
@@ -34,10 +28,3 @@ export default function App() {
         )
       }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff'
-  },
-})
