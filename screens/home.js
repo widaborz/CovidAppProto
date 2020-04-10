@@ -3,8 +3,6 @@ import {View, Text, StyleSheet, FlatList, Button} from 'react-native'
 import { globalStyles } from '../style/globalStyle'
 import Item from '../components/item'
 
-
-
 export default function Home({userData}){
 
     const [monitoringPoint, setMonitoringPoint] = useState([
@@ -20,9 +18,7 @@ export default function Home({userData}){
           return prevMonitoringPoint.filter(monitoringPoint => monitoringPoint.key != key);
         });
       };
-      
-      console.log(userData); 
-
+    
     return(
         <View>
             <View style={styles.dataCointainer}>

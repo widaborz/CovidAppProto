@@ -4,12 +4,14 @@ export const globalStyles = StyleSheet.create({
     title: {
         fontSize: 15, 
         fontWeight: "bold", 
-        color: "#fff"
+        color: "#fff",
+        fontFamily: "gotu-regular"
       }, 
       blackTitle: {
         fontSize: 15, 
         fontWeight: "bold", 
-        color: "#000"
+        color: "#000", 
+        fontFamily: "gotu-regular"
       }, 
       colorBright: {
         color: "#fff"

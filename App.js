@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import * as  Font from 'expo-font';
+import { AppLoading } from 'expo';
+
 import Header from './components/header'
 import Home from './screens/home'
+import { userData } from './data/data'
+
+const getFont = () => Font.loadAsync({
+    'gotu-regular': require('./assets/fonts/Gotu-Regular.ttf'),
+  });
 
 export default function App() {
 
-  const userData = {name: "Matteo Canzari", prov: "TE", affiliation: "OAAb"};
+  const [fontsLoaded, setFontsLoaded] = useState('off');
 
-    return (
-      <View>
-        <Header />
-        <Home userData = {userData}/>
-      </View>
-    );
+      if(fontsLoaded == 'on')
+      {
+        return(
+          <View>
+            <Header />
+            <Home userData = {userData}/>
+          </View>
+        )
+      }
+      else 
+      {
+        return(
+            <AppLoading 
+              startAsync={getFont} 
+              onFinish={() => setFontsLoaded('on')} 
+            />
+        )
+      }
 }
 
 const styles = StyleSheet.create({

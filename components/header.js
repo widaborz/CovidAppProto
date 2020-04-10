@@ -16,9 +16,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#1e90ff'
     },
     title: {
-        fontSize: 24,
+        fontSize: 21,
         textAlign: "center", 
         color: '#fff',
         fontWeight: 'bold',
+        fontFamily: 'gotu-regular'
     }
 });
