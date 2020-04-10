@@ -13,7 +13,6 @@ export default function App() {
 
       if(fontsLoaded == 'on')
       {
-        console.log('start navigator'); 
         return(
           <Navigator />
         )
