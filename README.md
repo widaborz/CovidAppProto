@@ -12,7 +12,7 @@ To run the environment:
 expo start
 ```
 
-There are needed also other dependancies for Navigation: 
+There are needed also other dependancies for  Stack Navigation: 
 
 ``` bash
 npm install react-navigation 
@@ -32,3 +32,10 @@ npm install react-native-safe-area-context
 npm install @react-native-community/masked-view    
 npm install react-native-screens 
 ```
+
+There also need other libraries for Drawer Navigation: 
+
+``` bash
+npm install react-navigation-drawer
+```
+

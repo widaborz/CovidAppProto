@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as  Font from 'expo-font';
 import { AppLoading } from 'expo';
-import Navigator from './routes/homeStack'
+import Navigator from './routes/drawer'
 
 const getFont = () => Font.loadAsync({
     'gotu-regular': require('./assets/fonts/Gotu-Regular.ttf')
