@@ -4,6 +4,7 @@ import { globalStyles } from '../style/globalStyle'
 import Item from '../components/item'
 import { userData } from '../data/data'
 
+
 export default function Home({ navigation }){
 
     const [monitoringPoint, setMonitoringPoint] = useState([
