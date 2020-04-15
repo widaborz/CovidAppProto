@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
         //color: '#fff',
         fontWeight: 'bold',
         fontFamily: 'gotu-regular', 
-        letterSpacing: 2
+        letterSpacing: 1
     }
 });

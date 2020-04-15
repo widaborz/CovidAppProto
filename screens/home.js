@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import {View, Text, StyleSheet, FlatList, Button, TouchableOpacity} from 'react-native'
 import { globalStyles } from '../style/globalStyle'
 import Item from '../components/item'
-import { userData } from '../data/data'
-
 export default function Home({ navigation }){
 
     const [monitoringPoint, setMonitoringPoint] = useState([
@@ -25,18 +23,14 @@ export default function Home({ navigation }){
     
     return(
         <View>
-            <View style={styles.dataCointainer}>
-                <Text style = {globalStyles.title}>User data</Text>
-                <Text style = {globalStyles.colorBright}>{userData.name}, {userData.affiliation}, ({userData.prov})</Text>
-            </View>
             <View style = {styles.formContainer}>
-            <Text style = {globalStyles.blackTitle}>Inserisci i tuoi parametri misurabili</Text>
+            <Text style = {globalStyles.blackTitle}>1. Inserisci i tuoi parametri misurabili</Text>
               <TouchableOpacity style = {globalStyles.touchableAction} onPress = {pressInsertParameter}>
                  <Text>Inserisci parametri (pressione, temperatura..)</Text>
               </TouchableOpacity>
             </View>
             <View style = {styles.formContainer}>
-                <Text style = {globalStyles.blackTitle}>Presenti uno di questi sintomi?</Text>
+                <Text style = {globalStyles.blackTitle}>2. Presenti uno di questi sintomi?</Text>
                 <FlatList
                 numColumns = '3'
                     data = {monitoringPoint}
