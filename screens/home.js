@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {View, Text, StyleSheet, FlatList, Button, TouchableOpacity} from 'react-native'
 import { globalStyles } from '../style/globalStyle'
 import Item from '../components/item'
+import Symptom from '../components/symptom'
 export default function Home({ navigation }){
 
     const [monitoringPoint, setMonitoringPoint] = useState([
@@ -52,22 +53,29 @@ export default function Home({ navigation }){
             <View style = {styles.formContainer}>
                 <Text style = {globalStyles.blackTitle}>2. Presenti uno di questi sintomi?</Text>
                 <FlatList
-                numColumns = '3'
+                numColumns = '2'
                     data = {monitoringPoint}
                     renderItem = {( {item} ) => (
                     <Item item = {item} pressHandler = {addSymptom} />
                     )}
+                    ListEmptyComponent = {() =>
+                      <Text style = {styles.formContainer}>Nessun altro sintomo da inserire</Text>
+                    }
                 />
             </View>
             <View style = {styles.formContainer}>
                 <Text style = {globalStyles.blackTitle}>3. Invia il tuo report</Text>
                 <FlatList
-                numColumns = '3'
+                numColumns = '2'
                     data = {symptoms}
                     renderItem = {( {item} ) => (
-                    <Item item = {item} pressHandler = {removeSymptom} />
+                    <Symptom symptom = {item} pressHandler = {removeSymptom} />
                     )}
+                ListEmptyComponent = {() =>
+                  <Text style = {styles.formContainer}>Nessun sintomo inserito</Text>
+                }
                 />
+  
                 <Button style = {styles.button} title = "Invia"></Button>
             </View>
         </View>

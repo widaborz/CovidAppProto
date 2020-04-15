@@ -15,6 +15,6 @@ const screens = {
     }
 }; 
 
-const HomeDrawer = createStackNavigator(screens); 
+const AboutStack = createStackNavigator(screens); 
 
-export default HomeDrawer; 
+export default AboutStack; 

@@ -1,12 +1,20 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { globalStyles } from '../style/globalStyle'
 
 export default function Item({item, pressHandler}){
     return(
-        <TouchableOpacity onPress = {() => (pressHandler(item.key))}>
-            <Text style={globalStyles.touchableItem}>{item.name}</Text>
+        <TouchableOpacity style={globalStyles.touchableItem} onPress = {() => (pressHandler(item.key))}>
+             <MaterialIcons name = "add" size = {20} style = {styles.icon}/><Text >{item.name}</Text>
         </TouchableOpacity>
     )
 }
+
+const styles = StyleSheet.create({
+    icon: {
+        paddingRight: 5, 
+        paddingLeft: 5
+    }
+})

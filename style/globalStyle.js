@@ -17,7 +17,8 @@ export const globalStyles = StyleSheet.create({
         color: "#fff"
       },
       touchableItem: {
-        padding: 16,
+        paddingVertical: 16,
+        paddingRight: 16,
         marginVertical: 16,
         marginHorizontal: 7,
         borderColor: '#bbb',
@@ -25,6 +26,7 @@ export const globalStyles = StyleSheet.create({
         borderStyle: "dashed",
         borderRadius: 1,
         borderRadius: 10,
+        flexDirection: "row"
       }, 
       touchableAction: {
         flexDirection: 'row',
