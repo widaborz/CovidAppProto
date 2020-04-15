@@ -10,12 +10,32 @@ export default function Home({ navigation }){
         {name: "difficoltà respiratorie", key: "5"},
         {name: "riduzione gusto olfatto", key: "6"}
       ]);
+
+      const [symptoms, setSymptoms] = useState([]);
     
-      const pressHandler = (key) => {
-        setMonitoringPoint(prevMonitoringPoint => {
+      const addSymptom = (key) => {
+          setSymptoms(prevSymptoms => {
+            return [
+              monitoringPoint.filter(monitoringPoint => monitoringPoint.key==key)[0],
+              ...prevSymptoms
+            ];
+          })
+          setMonitoringPoint(prevMonitoringPoint => {
           return prevMonitoringPoint.filter(monitoringPoint => monitoringPoint.key != key);
         });
       };
+
+      const removeSymptom = (key) => {
+        setMonitoringPoint(prevMonitoringPoint => {
+          return[
+            symptoms.filter(symptoms => symptoms.key == key)[0],
+            ...prevMonitoringPoint
+          ]
+        })
+        setSymptoms(prevSymptoms => {
+          return prevSymptoms.filter(symptoms => symptoms.key != key)
+        })
+    };
 
       const pressInsertParameter = () => {
         navigation.push('ItemDetail'); 
@@ -35,11 +55,19 @@ export default function Home({ navigation }){
                 numColumns = '3'
                     data = {monitoringPoint}
                     renderItem = {( {item} ) => (
-                    <Item item = {item} pressHandler = {pressHandler} />
+                    <Item item = {item} pressHandler = {addSymptom} />
                     )}
                 />
             </View>
-            <View>
+            <View style = {styles.formContainer}>
+                <Text style = {globalStyles.blackTitle}>3. Invia il tuo report</Text>
+                <FlatList
+                numColumns = '3'
+                    data = {symptoms}
+                    renderItem = {( {item} ) => (
+                    <Item item = {item} pressHandler = {removeSymptom} />
+                    )}
+                />
                 <Button style = {styles.button} title = "Invia"></Button>
             </View>
         </View>
