@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 
 import HomeStack from './homeStack'; 
 import AboutStack from './aboutStack'; 
+import UserStack from './userStack'
 
 const stackScreens = {
     Home: {
@@ -10,6 +11,9 @@ const stackScreens = {
     }, 
     About: {
         screen: AboutStack
+    }, 
+    User: {
+        screen: UserStack
     }
 }
 
